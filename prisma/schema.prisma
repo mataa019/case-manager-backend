@@ -14,15 +14,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 model User {
-  id        Int        @id @default(autoincrement())
-  email     String     @unique
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
   password  String
-  username  String
+  username  String   @unique // <-- Add @unique here
   fullname  String
-  Gender String
-  createdAt DateTime   @default(now())
-
-  auditLogs AuditLog[] 
+  Gender    String
+  createdAt DateTime @default(now())
+  auditLogs AuditLog[]
 }
 
 model Alert {
