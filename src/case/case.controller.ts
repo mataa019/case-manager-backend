@@ -5,5 +5,4 @@ import { CaseService } from './case.service';
 export class CaseController {
   constructor(private readonly caseService: CaseService) {}
 
-  // Define your endpoints here
 }
